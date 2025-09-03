@@ -33,8 +33,8 @@
     "@angular/ssr": "^20.2.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
-      "zone.js": "~0.14.0", // or a similar version
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular/build": "^20.2.1",

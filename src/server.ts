@@ -9,20 +9,17 @@ import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
+// Adiciona um log para verificar o caminho para a pasta 'browser'
+console.log('Caminho para a pasta dist/browser:', browserDistFolder);
+
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+// Middleware para logar todas as requisições recebidas pelo servidor
+app.use((req, res, next) => {
+  console.log(`Requisição recebida para: ${req.url}`);
+  next();
+});
 
 /**
  * Serve static files from /browser
@@ -57,8 +54,7 @@ if (isMainModule(import.meta.url)) {
     if (error) {
       throw error;
     }
-
-    console.log(`Node Express server listening on http://localhost:${port}`);
+    console.log(`Node Express server is now listening on http://localhost:${port}`);
   });
 }
 
