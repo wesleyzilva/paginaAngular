@@ -1,59 +1,48 @@
-# PaginaAngular
+PaginaAngular
+Este projeto é uma evolução da arquitetura de uma aplicação web, demonstrando a transição para um ecossistema Angular moderno com componentes standalone e a implementação de Server-Side Rendering (SSR) com Node.js.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+O objetivo é servir tanto como portfólio quanto como um modelo técnico. Ele foi projetado para transferir conhecimento para desenvolvedores juniores e QAs, com a intenção de praticar o desenvolvimento de aplicações web modernas. O código está separado por branches evolutivas no GitHub.
 
-## Development server
+Servidor de Desenvolvimento
+Para iniciar o servidor de desenvolvimento local, use o comando:
 
-To start a local development server, run:
-
-```bash
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação será aberta em http://localhost:4200/. Ela recarrega automaticamente sempre que você modifica um arquivo.
 
-## Code scaffolding
+Server-Side Rendering (SSR)
+Para rodar a aplicação com SSR usando o servidor Node.js, você precisa primeiro construir a aplicação e depois iniciar o servidor.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Construir a aplicação:
 
-```bash
-ng generate component component-name
-```
+npm run build
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Iniciar o servidor:
 
-```bash
+npm run serve:ssr:paginaAngular
+
+A aplicação com SSR estará disponível em http://localhost:4000/.
+
+Scaffolding de Código
+O Angular CLI inclui ferramentas poderosas para gerar código. Para criar um novo componente, use o comando:
+
+ng generate component nome-do-componente
+
+Para ver a lista completa de schematics (como components, directives ou pipes), execute:
+
 ng generate --help
-```
 
-## Building
+Construção para Produção
+Para compilar o projeto para produção, use o comando:
 
-To build the project run:
-
-```bash
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Este comando compila o projeto e salva os arquivos de build no diretório dist/. Por padrão, o build de produção otimiza a aplicação para melhor performance e velocidade.
 
-## Running unit tests
+Testes
+Para executar os testes unitários com o Karma, use o seguinte comando:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
 ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Recursos Adicionais
+Para mais informações sobre o uso do Angular CLI, incluindo referências detalhadas de comandos, visite a página Angular CLI Overview and Command Reference.
