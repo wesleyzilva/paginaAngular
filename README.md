@@ -1,48 +1,112 @@
 PaginaAngular
-Este projeto é uma evolução da arquitetura de uma aplicação web, demonstrando a transição para um ecossistema Angular moderno com componentes standalone e a implementação de Server-Side Rendering (SSR) com Node.js.
+Este projeto é uma evolução da arquitetura de uma aplicação web, demonstrando a transição de uma página estática em HTML para um ecossistema Angular moderno com componentes standalone e a implementação de Server-Side Rendering (SSR) com Node.js.
+
+
+
+Apenas em HTML: https://github.com/wesleyzilva/pagina
+
+Convertido Node: https://github.com/wesleyzilva/paginaAngular
+
+
 
 O objetivo é servir tanto como portfólio quanto como um modelo técnico. Ele foi projetado para transferir conhecimento para desenvolvedores juniores e QAs, com a intenção de praticar o desenvolvimento de aplicações web modernas. O código está separado por branches evolutivas no GitHub.
 
-Servidor de Desenvolvimento
-Para iniciar o servidor de desenvolvimento local, use o comando:
+Plano de Evolução do Portfólio
+Este documento descreve a visão, a arquitetura e o plano de execução para evoluir este portfólio de uma página web estática para um ecossistema de aplicações moderno, demonstrando práticas de desenvolvimento full-stack.
 
-ng serve
+🚀 Visão do Projeto
+O objetivo é refatorar o portfólio atual para uma arquitetura completa, aplicando conceitos de desenvolvimento modular e comunicação via APIs. Esta transição servirá como um projeto prático para demonstrar proficiência em tecnologias e metodologias de ponta.
 
-A aplicação será aberta em http://localhost:4200/. Ela recarrega automaticamente sempre que você modifica um arquivo.
+🛠️ Arquitetura Proposta
+A nova arquitetura será composta por camadas distintas que se comunicam para garantir modularidade, escalabilidade e manutenibilidade.
 
-Server-Side Rendering (SSR)
-Para rodar a aplicação com SSR usando o servidor Node.js, você precisa primeiro construir a aplicação e depois iniciar o servidor.
+Frontend (Angular):
 
-Construir a aplicação:
+A interface do usuário será uma Single-Page Application (SPA) desenvolvida com Angular, aproveitando sua estrutura de componentes para criar uma experiência de usuário rica e interativa.
 
-npm run build
+API Facade (Camada Intermediária):
 
-Iniciar o servidor:
+Uma API de fachada servirá como a única porta de entrada para o frontend. Ela irá orquestrar requisições, simplificar a comunicação com o backend e centralizar a segurança.
 
-npm run serve:ssr:paginaAngular
+API Business (Backend):
 
-A aplicação com SSR estará disponível em http://localhost:4000/.
+Esta API será responsável por toda a lógica de negócio, como a gestão dos dados de projetos e habilidades.
 
-Scaffolding de Código
-O Angular CLI inclui ferramentas poderosas para gerar código. Para criar um novo componente, use o comando:
+Banco de Dados (PostgreSQL):
 
-ng generate component nome-do-componente
+O PostgreSQL será o repositório de dados, armazenando de forma persistente as informações do portfólio.
 
-Para ver a lista completa de schematics (como components, directives ou pipes), execute:
+🗺️ Plano de Sprints (Ciclo Ágil)
+O desenvolvimento será guiado por um ciclo de sprints, focando em entregas incrementais de valor, qualidade de código e automação.
 
-ng generate --help
+Sprint 1: Fundação e Estrutura do Projeto
 
-Construção para Produção
-Para compilar o projeto para produção, use o comando:
+Objetivo: Definir a arquitetura base e configurar o ambiente de desenvolvimento com foco em boas práticas e automação inicial.
 
-ng build
+Tarefas:
 
-Este comando compila o projeto e salva os arquivos de build no diretório dist/. Por padrão, o build de produção otimiza a aplicação para melhor performance e velocidade.
+Definir a estrutura do monorepo (frontend, backend/facade, backend/business).
 
-Testes
-Para executar os testes unitários com o Karma, use o seguinte comando:
+Inicializar o projeto Angular com linter (ESLint) e formatação (Prettier).
 
-ng test
+Inicializar os projetos backend (ex: Spring Boot) com dependências para web, dados e segurança.
 
-Recursos Adicionais
-Para mais informações sobre o uso do Angular CLI, incluindo referências detalhadas de comandos, visite a página Angular CLI Overview and Command Reference.
+Configurar o pipeline de CI (Continuous Integration) inicial com um job de build para validar a estrutura.
+
+Criar o primeiro componente Angular com seu teste unitário (Jasmine/Karma).
+
+Sprint 2: Backend, Persistência e TDD
+
+Objetivo: Desenvolver a camada de API e a conexão com o banco de dados, aplicando TDD (Test-Driven Development).
+
+Tarefas:
+
+Modelar o domínio inicial no PostgreSQL (ex: tabela projects).
+
+Implementar a camada de persistência (Repository) com testes de integração (usando H2 ou Testcontainers).
+
+Criar a primeira API na camada Business (ex: GET /api/projects) com testes unitários para Service e Controller.
+
+Adicionar a execução de testes do backend no pipeline de CI.
+
+Sprint 3: Integração Frontend-Backend e Componentização
+
+Objetivo: Conectar o frontend à API e refatorar a UI estática em componentes dinâmicos e testáveis.
+
+Tarefas:
+
+Criar um serviço em Angular (ProjectService) para consumir a API.
+
+Refatorar a seção de projetos para usar componentes dinâmicos (ex: ProjectCardComponent).
+
+Escrever testes unitários para o ProjectService (com HttpClientTestingModule) e para os componentes.
+
+Configurar o proxy de desenvolvimento do Angular para evitar problemas de CORS localmente.
+
+Sprint 4: Automação de Testes E2E e Qualidade de Código
+
+Objetivo: Aumentar a confiança no código através de automação de testes de ponta a ponta e análise estática.
+
+Tarefas:
+
+Configurar um framework de testes E2E (End-to-End), como Cypress ou Playwright.
+
+Escrever o primeiro teste E2E: "visitar a página e verificar se a lista de projetos é carregada".
+
+Integrar a execução dos testes E2E no pipeline de CI.
+
+Documentar a API usando Swagger/OpenAPI no backend.
+
+Sprint 5: Deploy Contínuo e Monitoramento
+
+Objetivo: Automatizar o processo de deploy e preparar a aplicação para o ambiente de produção.
+
+Tarefas:
+
+Criar um workflow de CD (Continuous Deployment) para publicar o frontend no GitHub Pages.
+
+"Dockerizar" as aplicações backend.
+
+(Opcional) Configurar o deploy do backend em uma plataforma de nuvem via pipeline de CD.
+
+Adicionar health checks (/actuator/health) nas APIs de backend.
