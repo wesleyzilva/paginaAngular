@@ -82,7 +82,7 @@ export class ProjectsComponent {
       skills: ['Java', 'Apigee', 'Salesforce', '.NET', 'Airflow', 'Control-M', 'Adobe Analytics', 'UI/UX Design', 'Pensamento Analítico']
     },
     {
-      titulo: 'Migração de aplicações legadas .net para arquitetura de referência angular/java',
+      titulo: 'Projeto 8: Migração de aplicações legadas .net para arquitetura de referência angular/java',
       escopo: 'Temos um parque de aplicações com cerca de 50 aplicações .net desde o 1.1 até o 2.5 e é necessário evoluir para um frame mais atualizado e/ou migração para angular/java',
       duracao: '3 anos',
       equipe: '1 Squad contendo 5 devs, 4 QA',

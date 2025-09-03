@@ -1,0 +1,15 @@
+<section class="skills">
+  <h2>Pilares e Competências</h2>
+  <p class="subtitle">Capacidade de execução & Resultados alcançados em projetos entre Jan/2020 a Ago/2025</p>
+
+  <div class="skills-grid" *ngIf="skillCategories.length > 0">
+    <div class="skill-card" *ngFor="let category of skillCategories">
+      <h3>{{ category.title }}</h3>
+      <ul>
+        <li *ngFor="let skill of category.skills">
+          {{ skill.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
