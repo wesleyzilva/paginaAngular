@@ -1,0 +1,51 @@
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    z-index: 998;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+}
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.site-footer a:hover {
+    color: #3498db;
+}
+.site-footer .social-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.8rem;
+}
+.site-footer .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.footer-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}

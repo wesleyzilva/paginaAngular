@@ -1,0 +1,29 @@
+<div class="project-card">
+    <h3>{{ projeto.titulo }}</h3>
+    <p><strong>Escopo:</strong> {{ projeto.escopo }}</p>
+    <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+            <tr style="background: #e6f0fa;">
+                <th style="padding: 0.5rem; border: 1px solid #ccc;">Duração</th>
+                <th style="padding: 0.5rem; border: 1px solid #ccc;">Equipe</th>
+                <th style="padding: 0.5rem; border: 1px solid #ccc;">Conquistas</th>
+                <th style="padding: 0.5rem; border: 1px solid #ccc;">Destaques</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 0.5rem; border: 1px solid #ccc;">{{ projeto.duracao }}</td>
+                <td style="padding: 0.5rem; border: 1px solid #ccc;">{{ projeto.equipe }}</td>
+                <td style="padding: 0.5rem; border: 1px solid #ccc;">{{ projeto.conquistas }}</td>
+                <td style="padding: 0.5rem; border: 1px solid #ccc;">{{ projeto.destaques }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="project-links">
+        <a *ngFor="let link of projeto.links" [href]="link.url" class="btn" target="_blank">{{ link.texto }}</a>
+    </div>
+    <h4>Hard & Soft Skills do projeto</h4>
+    <div class="tech-pills-container">
+        <span *ngFor="let skill of projeto.skills" class="btn btn_skill">{{ skill }}</span>
+    </div>
+</div>
