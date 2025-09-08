@@ -90,6 +90,46 @@ export class ProjectsComponent {
       destaques: 'Coordenação tecnica direta e priorização de backlog sem PO',
       links: [{ url: 'https://serasa.com/', texto: 'B2B Serasa Experian' }, { url: 'https://www.linkedin.com/in/jean-takushi-9371781/', texto: 'Referência: Jean Takushi' }],
       skills: ['Java', 'Apigee', 'Salesforce', '.NET', 'Batch', 'Control-M', 'Dynatrace', 'BitBucket', 'Liderança', 'Resolução de Problemas', 'Git & GitHub']
+    },
+    {
+      titulo: 'Projeto 9: Programa Empower - Six Sigma Yellow Belt IT',
+      escopo: 'O projeto Empower nasceu como uma iniciativa de inclusão social e diversidade da Serasa Experian, focada em estruturar e liderar tecnicamente um programa de desenvolvimento. A partir dele, apliquei a metodologia Lean Six Sigma para otimizar processos de desenvolvimento e sustentação de TI no contexto do programa social. O objetivo era criar uma esteira de trabalho eficiente e fluidificar os processos das squads.',
+      duracao: '1 ano',
+      equipe: '1 coach black belt',
+      conquistas: 'Análise e otimização de processos de incidentes, changes e problems na ferramenta Service Now, resultando em uma redução de incidentes diários vindos de N1.',
+      destaques: 'Uso de métricas e análise de dados para tomada de decisões estratégicas. Criação de um documento de problemas conhecidos para a equipe de N1, garantindo um fluxo mais fluido de resolução.',
+      links: [{ url: 'https://www.serasaexperian.com.br/', texto: 'Serasa Experian' }, { url: 'https://www.linkedin.com/in/thiago-adescenco/', texto: 'Referência: Thiago Ferreira' }],
+      skills: ['Lean Six Sigma', 'Análise de Dados', 'DMAIC', 'Melhoria Contínua', 'Mentoria', 'Liderança Técnica', 'Planejamento Estratégico', 'Comunicação Empática']
+    },
+    {
+      titulo: 'Projeto 10: Mentoria internacional Serasa Experian para o mundo Agile',
+      escopo: 'Treinamento e aplicação de técnicas de coaching para desenvolver o potencial da equipe, com ênfase em liderança e autonomia. Fui mentorado por um coach internacional para entender os processos ágeis que a Experian estava desenvolvendo na Europa, e depois atuei como mentor de outros profissionais.',
+      duracao: '1 ano',
+      equipe: '1 coach internacional (como mentor)',
+      conquistas: 'Fui mentoriado para entender os processos ágeis na Europa e, posteriormente, usei esse conhecimento para atuar como mentor de outros.',
+      destaques: 'Após ser mentorado, passei a ser mentor e tive a oportunidade de mentorar 3 pessoas: uma na Índia, uma no Brasil e outra na África do Sul.',
+      links: [{ url: 'https://www.serasaexperian.com.br/carreiras/blog-carreiras/tipos-de-lideranca/', texto: 'Artigo Serasa Experian - Tipos de Liderança' }],
+      skills: ['Mentoria internacional Serasa Experian', 'Liderança', 'Desenvolvimento Humano', 'Inteligência Emocional', 'Comunicação Efetiva']
+    },
+    {
+      titulo: 'Projeto 11: Firefighters - Sustentação a aplicações legadas CRM e Billing',
+      escopo: 'Sustentação de aplicações legadas de CRM e Billing para uma grande empresa de telecomunicação, em parceria com a Amdocs do Brasil. O foco principal era garantir a estabilidade, corrigir bugs e aprimorar a performance dos sistemas on premise Windows, e em Linux com shell scripts.',
+      duracao: '3 anos',
+      equipe: 'Squad de sustentação com 5 Desenvolvedores com suporte 24x7.',
+      conquistas: 'Redução do número de incidentes e automatização da correção cadastral de clientes, gerando uma redução no número de incidentes diários de 300 para 100.',
+      destaques: 'Liderança em uma squad internacional com suporte 24x7, com transferência de conhecimento e operação em turno com a Índia.',
+      links: [{ url: 'https://www.serasa.com/', texto: 'Site da Serasa' }],
+      skills: ['CRM', 'Billing', 'Java', 'C++', 'ITIL', 'Resolução de Problemas', 'Comunicação Efetiva', 'Gestão de Stakeholders']
+    },
+    {
+      titulo: 'Projeto 12: Serasa Experian São Carlos',
+      escopo: 'Trazer o conhecimento técnico que estavam nas consultorias de tecnologia para operação dentro da Serasa, aproximando analistas de negócios de desenvolvimento e disseminando o conhecimento de tecnologia dentro da Serasa Experian.',
+      duracao: '2 anos',
+      equipe: 'Desenvolvedores terceiros e Analistas de negócio.',
+      conquistas: 'Conhecimento técnico das aplicações que estavam com terceiros internalizado na Serasa Experian quando a operação de São Carlos foi montada.',
+      destaques: 'Documentação extensiva das aplicações relacionando o técnico e preparando para o mundo da agilidade.',
+      links: [{ url: 'https://www.serasa.com/', texto: 'Site da Serasa' }],
+      skills: ['CRM', 'Billing', 'Java', 'C++', 'ITIL', 'Resolução de Problemas', 'Comunicação Efetiva', 'Gestão de Stakeholders']
     }
   ];
 }
