@@ -1,0 +1,44 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--cor-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--cor-texto);
+    z-index: 999;
+    border-bottom: 1px solid var(--cor-ui-sutil);
+    padding: 0.5rem 0;
+    transition: padding 0.3s ease;
+}
+.header .header-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .name {
+    font-size: 1.4rem;
+    font-family: var(--fonte-primaria);
+    margin: 0;
+    color: var(--cor-destaque-secundaria);
+    text-shadow: 0 0 5px var(--cor-destaque-secundaria);
+}
+.header .role {
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0.75rem 0;
+    }
+    .header .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

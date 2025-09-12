@@ -1,0 +1,59 @@
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--cor-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--cor-texto);
+    padding: 1rem 0;
+    z-index: 998; /* Abaixo do ícone do WhatsApp */
+    border-top: 1px solid var(--cor-ui-sutil);
+}
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between; /* Ajustado para alinhar o contador */
+    align-items: center;
+    flex-wrap: wrap;
+}
+.site-footer a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.site-footer a:hover {
+    color: var(--cor-destaque-primaria);
+}
+.site-footer .social-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.8rem;
+}
+.site-footer .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.footer-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.visitor-counter, .last-modified {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+.footer-left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
