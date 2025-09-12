@@ -8,9 +8,18 @@
   --cor-destaque-secundaria: #4CC9F0;
   --cor-ui-sutil: #415A77;
   --cor-glass-bg: rgba(23, 37, 51, 0.5);
+  /* Minimalist & Typographic Palette */
+  --cor-fundo: #f4f4f4;
+  --cor-texto: #111111;
+  --cor-destaque: #0052FF;
+  --cor-borda: #dddddd;
+  --cor-fundo-card: #ffffff;
 
   --fonte-primaria: 'Orbitron', sans-serif; /* Sugestão de fonte futurista, pode ser importada ou usada uma alternativa */
   --fonte-secundaria: 'Rajdhani', sans-serif;
+  /* Sugestão de fontes: uma serifada para títulos e uma sans-serif limpa para o corpo */
+  --fonte-primaria: 'Merriweather', serif;
+  --fonte-secundaria: 'Inter', sans-serif;
 }
 
 /* Reset básico de CSS */
@@ -29,6 +38,8 @@ body {
     /* Adiciona uma grade sutil ao fundo para um efeito sci-fi */
     background-image: linear-gradient(var(--cor-ui-sutil) 1px, transparent 1px), linear-gradient(to right, var(--cor-ui-sutil) 1px, var(--cor-fundo) 1px);
     background-size: 40px 40px;
+    padding-top: 80px; /* Ajuste para novo header */
+    padding-bottom: 80px; /* Espaço para o rodapé fixo */
 }
 
 @media (max-width: 768px) {

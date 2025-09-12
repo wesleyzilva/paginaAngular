@@ -23,24 +23,42 @@
     height: 56px;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexágono */
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     animation: pulse 3s infinite ease-in-out;
 }
 .floating-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.1);d;
+    box-shaow: 0 4px 12px rgba(0,0,0,0.3)
     box-shadow: 0 0 15px var(--cor-destaque-secundaria);
     animation-play-state: paused;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+    color: #fff;
 .floating-button i {
     font-size: 2rem;
     color: var(--cor-texto);
+    color: #fff;
+    background: #E12D39; /* Cor para o CV (vermelho) */
 }
 .floating-button.pdf-cv {
     background: var(--cor-destaque-primaria);
-    animation-delay: 0.5s;
+    animation-delay: 0.;
+    background: var(--cor-destaque); /* Cor para a Carta de Apresentação (azul) */
+}
+.floating-button.whatsapp {
+    background: #25d3665s;
+    background: #E12D39; /* Cor para o CV (vermelho) */
 }
 .floating-button.pdf-carta {
     background: var(--cor-destaque-secundaria);
     animation-delay: 1s;
+    background: var(--cor-destaque); /* Cor para a Carta de Apresentação (azul) */
+}
+.floating-button.whatsapp {
+    background: #25d366;
 }

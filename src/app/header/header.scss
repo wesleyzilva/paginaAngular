@@ -6,10 +6,13 @@
     background: var(--cor-glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    background: var(--cor-fundo);
     color: var(--cor-texto);
     z-index: 999;
     border-bottom: 1px solid var(--cor-ui-sutil);
     padding: 0.5rem 0;
+    border-bottom: 1px solid var(--cor-borda);
+    padding: 1rem 0;
     transition: padding 0.3s ease;
 }
 .header .header-content {
@@ -22,10 +25,12 @@
 }
 .header .name {
     font-size: 1.4rem;
+    font-size: 1.5rem;
     font-family: var(--fonte-primaria);
     margin: 0;
     color: var(--cor-destaque-secundaria);
     text-shadow: 0 0 5px var(--cor-destaque-secundaria);
+    color: var(--cor-texto);
 }
 .header .role {
     font-size: 0.9rem;
