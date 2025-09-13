@@ -8,9 +8,9 @@
 /* CSS para os botões flutuantes */
 .floating-button-container {
     position: fixed;
-    bottom: 100px;
-    right: 24px;
-    z-index: 1000;
+    top: 100px;
+    left: 24px;
+    z-index: 1001; /* Acima do header/footer */
     display: flex;
     flex-direction: column;
     gap: 12px; /* Espaço entre os botões */
