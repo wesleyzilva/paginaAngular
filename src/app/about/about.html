@@ -52,8 +52,16 @@
               </tr>
             </tbody>
           </table>
-          <div class="project-links">
-            <a *ngFor="let link of project.links" [href]="link.url" class="btn" target="_blank" [hidden]="!link.text">{{ link.text }}</a>
+          <div class="project-actions">
+            <div class="project-links">
+              <a *ngFor="let link of project.links" [href]="link.url" class="btn" target="_blank" [hidden]="!link.text">{{ link.text }}</a>
+            </div>
+            <div class="like-container">
+              <button class="like-button" (click)="likeProject(project)" [class.liked]="project.liked">
+                <i class="fas fa-heart"></i>
+              </button>
+              <span class="like-count">{{ project.likes }}</span>
+            </div>
           </div>
           <h4>Project Hard & Soft Skills</h4>
           <div class="tech-pills-container">

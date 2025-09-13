@@ -26,7 +26,9 @@ export class About implements OnInit {
           { text: 'Flexpag M&A Serasa Experian', url: 'https://flexpag.com/' },
           { text: 'Reference: Matheus Benicio', url: 'https://www.linkedin.com/in/matheus-benicio-b55a4a8/' }
         ],
-        skills: ['Java', 'Angular', 'Veracode', 'Rapid 7', 'CI/CD', 'Agile Processes', 'Leadership', 'Problem Solving']
+        skills: ['Java', 'Angular', 'Veracode', 'Rapid 7', 'CI/CD', 'Agile Processes', 'Leadership', 'Problem Solving'],
+        likes: 28,
+        liked: false
       },
       {
         seal: 'assets/superacaoObstaculos.png',
@@ -40,7 +42,9 @@ export class About implements OnInit {
           { text: 'Flexpag M&A Serasa Experian', url: 'https://flexpag.com/' },
           { text: 'Reference: Vini K', url: 'https://www.linkedin.com/in/viniciuskr' }
         ],
-        skills: ['DataDog', 'Power Automate', 'Analytics', 'Data Engineering', 'ETL', 'Leadership', 'People Management', 'Agile Processes']
+        skills: ['DataDog', 'Power Automate', 'Analytics', 'Data Engineering', 'ETL', 'Leadership', 'People Management', 'Agile Processes'],
+        likes: 42,
+        liked: false
       },
       {
         seal: null,
@@ -54,7 +58,9 @@ export class About implements OnInit {
           { text: 'Flexpag M&A Serasa Experian', url: 'https://flexpag.com/' },
           { text: 'Reference: Vini K', url: 'https://www.linkedin.com/in/viniciuskr' }
         ],
-        skills: ['Databricks', 'PowerBI', 'Pentaho', 'Tableau', 'Datadog', 'Leadership', 'Agile Processes', 'Analytical Thinking']
+        skills: ['Databricks', 'PowerBI', 'Pentaho', 'Tableau', 'Datadog', 'Leadership', 'Agile Processes', 'Analytical Thinking'],
+        likes: 35,
+        liked: false
       },
       {
         seal: 'assets/maiorImpacto.png',
@@ -68,7 +74,9 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Samantha Miziara', url: 'https://www.linkedin.com/in/samantha-miziara' }
         ],
-        skills: ['Remote Team Management']
+        skills: ['Remote Team Management'],
+        likes: 56,
+        liked: false
       },
       {
         seal: 'assets/inovacaoTecnica.png',
@@ -82,7 +90,9 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian | LegalTech', url: 'https://serasa.com/' },
           { text: 'Reference: Simone Garcia', url: 'https://www.linkedin.com/in/simone-conejo-garcia-morello-0a0984137/' }
         ],
-        skills: ['Artificial Intelligence', 'Elasticsearch', 'Low Code (OutSystems)', 'LegalTech', 'Problem Solving', 'Analytical Thinking']
+        skills: ['Artificial Intelligence', 'Elasticsearch', 'Low Code (OutSystems)', 'LegalTech', 'Problem Solving', 'Analytical Thinking'],
+        likes: 61,
+        liked: false
       },
       {
         seal: 'assets/reconhecimento.png',
@@ -96,7 +106,9 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Jean Takushi', url: 'https://www.linkedin.com/in/JeanTakushi' }
         ],
-        skills: ['Problem Solving']
+        skills: ['Problem Solving'],
+        likes: 22,
+        liked: false
       },
       {
         seal: null,
@@ -110,7 +122,9 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Jean Takushi', url: 'https://www.linkedin.com/in/jean-takushi-9371781/' }
         ],
-        skills: ['Java', 'Apigee', 'Salesforce', '.NET', 'Airflow', 'Control-M', 'Adobe Analytics', 'UI/UX Design', 'Analytical Thinking']
+        skills: ['Java', 'Apigee', 'Salesforce', '.NET', 'Airflow', 'Control-M', 'Adobe Analytics', 'UI/UX Design', 'Analytical Thinking'],
+        likes: 18,
+        liked: false
       },
       {
         seal: null,
@@ -124,7 +138,9 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Jean Takushi', url: 'https://www.linkedin.com/in/jean-takushi-9371781/' }
         ],
-        skills: []
+        skills: [],
+        likes: 12,
+        liked: false
       },
       {
         seal: null,
@@ -138,7 +154,9 @@ export class About implements OnInit {
           { text: '', url: 'https://www.serasaexperian.com.br/' },
           { text: 'Reference: Thiago Ferreira', url: 'https://www.linkedin.com/in/thiago-adescenco/' }
         ],
-        skills: ['Lean Six Sigma', 'Data Analysis', 'DMAIC', 'Continuous Improvement', 'Mentoring', 'Technical Leadership', 'Strategic Planning', 'Empathetic Communication']
+        skills: ['Lean Six Sigma', 'Data Analysis', 'DMAIC', 'Continuous Improvement', 'Mentoring', 'Technical Leadership', 'Strategic Planning', 'Empathetic Communication'],
+        likes: 78,
+        liked: false
       },
       {
         seal: null,
@@ -151,7 +169,9 @@ export class About implements OnInit {
         links: [
           { text: 'Serasa Experian Article - Types of Leadership', url: 'https://www.serasaexperian.com.br/carreiras/blog-carreiras/tipos-de-lideranca/' }
         ],
-        skills: ['Serasa Experian International Mentoring', 'Leadership', 'Human Development', 'Emotional Intelligence', 'Effective Communication']
+        skills: ['Serasa Experian International Mentoring', 'Leadership', 'Human Development', 'Emotional Intelligence', 'Effective Communication'],
+        likes: 95,
+        liked: false
       },
       {
         seal: null,
@@ -164,7 +184,9 @@ export class About implements OnInit {
         links: [
           { text: 'Serasa Website', url: 'https://www.serasa.com/' }
         ],
-        skills: []
+        skills: [],
+        likes: 45,
+        liked: false
       },
       {
         seal: null,
@@ -177,7 +199,9 @@ export class About implements OnInit {
         links: [
           { text: 'Serasa Website', url: 'https://www.serasa.com/' }
         ],
-        skills: []
+        skills: [],
+        likes: 33,
+        liked: false
       }
     ];
   }
@@ -191,6 +215,16 @@ export class About implements OnInit {
   previousProject(): void {
     if (this.currentProjectIndex > 0) {
       this.currentProjectIndex--;
+    }
+  }
+
+  likeProject(project: any): void {
+    if (!project.liked) {
+      project.likes++;
+      project.liked = true;
+    } else {
+      project.likes--;
+      project.liked = false;
     }
   }
 }
