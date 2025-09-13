@@ -110,6 +110,24 @@
     }
 }
 
+.profile-skills {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.skills-category {
+    margin-bottom: 1.5rem;
+}
+
+.skills-title {
+    font-family: var(--fonte-primaria);
+    font-size: 1.2rem;
+    color: var(--cor-destaque-primaria);
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 0.25rem;
+}
+
 .social-links {
     display: flex;
     justify-content: center;

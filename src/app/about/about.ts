@@ -74,7 +74,7 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Samantha Miziara', url: 'https://www.linkedin.com/in/samantha-miziara' }
         ],
-        skills: ['Remote Team Management'],
+        skills: ['Yellow Belt', 'Scrum & Kanban', 'JIRA', 'Miro', 'ServiceNow', 'Tableau', 'SAFe', 'ITIL Agile', 'Leadership', 'People Management', 'Remote Team Management'],
         likes: 56,
         liked: false
       },
@@ -106,7 +106,7 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Jean Takushi', url: 'https://www.linkedin.com/in/JeanTakushi' }
         ],
-        skills: ['Problem Solving'],
+        skills: ['Java', 'Apigee', 'Salesforce', '.NET', 'Control-M', 'Dynatrace', 'BitBucket', 'ITIL', 'Clear Communication', 'Problem Solving'],
         likes: 22,
         liked: false
       },
@@ -138,7 +138,7 @@ export class About implements OnInit {
           { text: 'B2B Serasa Experian', url: 'https://serasa.com/' },
           { text: 'Reference: Jean Takushi', url: 'https://www.linkedin.com/in/jean-takushi-9371781/' }
         ],
-        skills: [],
+        skills: ['Java', 'Apigee', 'Salesforce', '.NET', 'Control-M', 'Dynatrace', 'BitBucket', 'Leadership', 'Problem Solving', 'Git & GitHub'],
         likes: 12,
         liked: false
       },
@@ -169,7 +169,7 @@ export class About implements OnInit {
         links: [
           { text: 'Serasa Experian Article - Types of Leadership', url: 'https://www.serasaexperian.com.br/carreiras/blog-carreiras/tipos-de-lideranca/' }
         ],
-        skills: ['Serasa Experian International Mentoring', 'Leadership', 'Human Development', 'Emotional Intelligence', 'Effective Communication'],
+        skills: ['International Mentoring', 'Leadership', 'Human Development', 'Emotional Intelligence', 'Effective Communication', 'English'],
         likes: 95,
         liked: false
       },
@@ -184,7 +184,7 @@ export class About implements OnInit {
         links: [
           { text: 'Serasa Website', url: 'https://www.serasa.com/' }
         ],
-        skills: [],
+        skills: ['CRM', 'Billing', 'Java', 'C++', 'ITIL', 'Problem Solving', 'Effective Communication', 'Stakeholder Management'],
         likes: 45,
         liked: false
       },
@@ -199,7 +199,7 @@ export class About implements OnInit {
         links: [
           { text: 'Serasa Website', url: 'https://www.serasa.com/' }
         ],
-        skills: [],
+        skills: ['CRM', 'Billing', 'Java', 'C++', 'ITIL', 'Problem Solving', 'Effective Communication', 'Stakeholder Management'],
         likes: 33,
         liked: false
       }
