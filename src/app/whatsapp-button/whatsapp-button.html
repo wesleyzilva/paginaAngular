@@ -1,11 +1,21 @@
 <div class="floating-button-container">
-    <a href="/src/app/assets/Wes_CartaApresentacaoWesleyCoord_IT.pdf.pdf" class="floating-button pdf-carta" download aria-label="Download Cover Letter">
-        <i class="fas fa-file-alt"></i>
-    </a>
-    <a href="/src/app/assets/Wes_CV_PT_Coord_IT_Desenv_Dados.pdf" class="floating-button pdf-cv" download aria-label="Download CV">
-        <i class="fas fa-file-pdf"></i>
-    </a>
-    <a href="https://wa.me/5516997212966" target="_blank" rel="noopener noreferrer" aria-label="Hello, Wesley" class="floating-button whatsapp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- Botão para iniciar o tour -->
+  <a (click)="startTourRequest.emit()" class="floating-button tour" title="Start Guided Tour">
+    <i class="fas fa-route"></i>
+  </a>
+
+  <!-- Botão para baixar CV -->
+  <a href="assets/cv.pdf" download="WesleyGomes_CV.pdf" class="floating-button pdf-cv" title="Download CV in PDF">
+    <i class="fas fa-file-pdf"></i>
+  </a>
+
+  <!-- Botão para baixar Carta de Apresentação -->
+  <a href="assets/carta.pdf" download="WesleyGomes_CartaApresentacao.pdf" class="floating-button pdf-carta" title="Download Cover Letter">
+    <i class="fas fa-file-alt"></i>
+  </a>
+
+  <!-- Botão do WhatsApp -->
+  <a href="https://wa.me/5511999999999" target="_blank" class="floating-button whatsapp" title="Contact via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </div>

@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-whatsapp-button',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './whatsapp-button.html',
-  styleUrl: './whatsapp-button.scss'
+  styleUrls: ['./whatsapp-button.scss']
 })
 export class WhatsappButton {
+  @Output() startTourRequest = new EventEmitter<void>();
 
 }
