@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            
+          "outputPath": "dist/paginaAngular/",
+          "baseHref": "/paginaAngular/",
+
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -28,6 +32,11 @@
                 "glob": "**/*",
                 "input": "public",
                 "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
@@ -35,7 +44,7 @@
             ]
           },
           "configurations": {
-            "production": {
+            "production": {    "baseHref": "/paginaAngular/",
               "budgets": [
                 {
                   "type": "initial",
@@ -87,11 +96,22 @@
                 "glob": "**/*",
                 "input": "public",
                 "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
               "src/styles.scss"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/paginaAngular/"
           }
         }
       }

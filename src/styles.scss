@@ -2,48 +2,78 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
 
 :root {
-  --cor-fundo: #0D1B2A;
-  --cor-texto: #E0E1DD;
-  --cor-destaque-primaria: #F72585;
-  --cor-destaque-secundaria: #4CC9F0;
+  /* Vibrant & Techy Palette */
+  --cor-fundo: #0D1B2A;                 /* Dark Navy Blue */
+  --cor-texto: #E0E1DD;                 /* Off-white */
+  --cor-destaque-primaria: #4CC9F0;     /* Vibrant Cyan */
+  --cor-destaque-secundaria: #F72585;   /* Vibrant Magenta */
+  --cor-borda: #415A77;                 /* Muted Blue/Gray */
+  --cor-fundo-card: #1B263B;            /* Darker Card Background */
+  --cor-glass-bg: rgba(27, 38, 59, 0.85); /* Dark glass effect */
   --cor-ui-sutil: #415A77;
-  --cor-glass-bg: rgba(23, 37, 51, 0.5);
-  /* Minimalist & Typographic Palette */
-  --cor-fundo: #f4f4f4;
-  --cor-texto: #111111;
-  --cor-destaque: #0052FF;
-  --cor-borda: #dddddd;
-  --cor-fundo-card: #ffffff;
-
-  --fonte-primaria: 'Orbitron', sans-serif; /* Sugestão de fonte futurista, pode ser importada ou usada uma alternativa */
-  --fonte-secundaria: 'Rajdhani', sans-serif;
+  --cor-sucesso: #25D366;               /* WhatsApp Green */
+  --cor-perigo: #E12D39;                /* Red for CV */
+  
   /* Sugestão de fontes: uma serifada para títulos e uma sans-serif limpa para o corpo */
   --fonte-primaria: 'Merriweather', serif;
   --fonte-secundaria: 'Inter', sans-serif;
 }
+
+html {
+  font-size: 17px; /* Revertendo para um tamanho mais padrão para acomodar o layout */
+}
+
 
 /* Reset básico de CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: var(--cor-destaque-primaria) var(--cor-fundo);
+    scrollbar-width: auto;
+    scrollbar-color: var(--cor-destaque-secundaria) var(--cor-fundo);
 }
 
 body {
     font-family: var(--fonte-secundaria), Arial, sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    /* Adiciona uma grade sutil ao fundo para um efeito sci-fi */
-    background-image: linear-gradient(var(--cor-ui-sutil) 1px, transparent 1px), linear-gradient(to right, var(--cor-ui-sutil) 1px, var(--cor-fundo) 1px);
-    background-size: 40px 40px;
-    padding-top: 80px; /* Ajuste para novo header */
-    padding-bottom: 80px; /* Espaço para o rodapé fixo */
+    padding-top: 80px; /* Space for the header */
+    padding-bottom: 80px; /* Space for the fixed footer */
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 110px; /* Ajuste para header maior */
+        padding-top: 140px; /* Space for the mobile header */
     }
+}
+
+/* --- Glow effect for footer --- */
+.site-footer .contact-info a {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.site-footer .contact-info:hover a,
+.site-footer .contact-info:hover i {
+    color: var(--cor-destaque-primaria);
+    text-shadow: 0 0 8px var(--cor-destaque-primaria);
+}
+
+.site-footer .contact-info i {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* --- Glowing animation for visitor counter --- */
+@keyframes intermittent-glow {
+  0%, 100% {
+    color: var(--cor-destaque-secundaria);
+    text-shadow: none;
+  }
+  50% {
+    color: var(--cor-destaque-primaria);
+    text-shadow: 0 0 10px var(--cor-destaque-primaria), 0 0 15px var(--cor-destaque-primaria);
+  }
+}
+
+.site-footer .visitor-counter {
+  animation: intermittent-glow 4s infinite ease-in-out;
 }

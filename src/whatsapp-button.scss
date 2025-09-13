@@ -1,7 +1,7 @@
 @keyframes pulse {
-    0% { box-shadow: 0 0 5px 0 rgba(76, 201, 240, 0.7); }
-    50% { box-shadow: 0 0 20px 5px rgba(76, 201, 240, 0.3); }
-    100% { box-shadow: 0 0 5px 0 rgba(76, 201, 240, 0.7); }
+    0% { box-shadow: 0 0 5px 0 rgba(10, 88, 202, 0.7); }
+    50% { box-shadow: 0 0 20px 5px rgba(10, 88, 202, 0.3); }
+    100% { box-shadow: 0 0 5px 0 rgba(10, 88, 202, 0.7); }
 }
 
 
@@ -30,7 +30,7 @@
 }
 .floating-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 15px var(--cor-destaque-secundaria);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 0 15px var(--cor-destaque-primaria);
     animation-play-state: paused;
     color: #fff;
 }
@@ -39,13 +39,13 @@
     color: #fff;
 }
 .floating-button.pdf-cv {
-    background: #E12D39; /* Cor para o CV (vermelho) */
+    background: var(--cor-perigo); /* Vermelho para CV */
     animation-delay: 0s;
 }
 .floating-button.pdf-carta {
-    background: var(--cor-destaque); /* Cor para a Carta de Apresentação (azul) */
+    background: var(--cor-destaque-primaria); /* Azul para Carta de Apresentação */
     animation-delay: 1s;
 }
 .floating-button.whatsapp {
-    background: #25d366;
+    background: var(--cor-sucesso); /* Verde para WhatsApp */
 }
