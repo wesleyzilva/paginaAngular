@@ -26,7 +26,7 @@ export class Footer implements OnInit {
 
       const lastModified = new Date(document.lastModified);
       const options: Intl.DateTimeFormatOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
-      this.lastModifiedDate = lastModified.toLocaleDateString('pt-BR', options);
+      this.lastModifiedDate = lastModified.toLocaleDateString('en-GB', options);
     }
   }
 }

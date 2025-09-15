@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
-  imports: [],
+  standalone: true,
+  imports: [], // Adicione CommonModule aqui se precisar de diretivas como *ngIf, *ngFor, etc.
   templateUrl: './gallery.html',
   styleUrl: './gallery.scss'
 })
