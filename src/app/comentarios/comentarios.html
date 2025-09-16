@@ -1,9 +1,17 @@
 <section class="comentarios-container">
   <div class="comments-header">
     <h2>Comments</h2>
-    <button class="refresh-button" (click)="loadComments()" [disabled]="isLoading">
-      {{ isLoading ? 'Loading...' : 'Refresh' }}
-    </button>
+    <div class="refresh-controls">
+      <button class="refresh-button" (click)="loadComments()" [disabled]="isLoading">
+        {{ isLoading ? 'Loading...' : 'Refresh' }}
+      </button>
+      <select [(ngModel)]="autoRefreshInterval" (ngModelChange)="onIntervalChange($event)" class="interval-select" title="Auto-refresh interval">
+        <option [ngValue]="0">Auto-refresh Off</option>
+        <option [ngValue]="1000">Every 1s</option>
+        <option [ngValue]="5000">Every 5s</option>
+        <option [ngValue]="10000">Every 10s</option>
+      </select>
+    </div>
   </div>
 
   <!-- Loading and Error states -->

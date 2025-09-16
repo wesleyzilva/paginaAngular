@@ -19,7 +19,14 @@
     border-bottom: 1px solid var(--cor-ui-sutil);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap; // Allow wrapping on smaller screens
+    gap: 1rem;       // Add gap for when it wraps
 
+    .refresh-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
     .refresh-button {
       background-color: var(--cor-destaque-primaria);
       color: var(--cor-texto);
@@ -39,64 +46,27 @@
         cursor: not-allowed;
       }
     }
+
+    .interval-select {
+      background-color: var(--cor-fundo-card);
+      color: var(--cor-texto);
+      border: 1px solid var(--cor-borda);
+      border-radius: 4px;
+      padding: 0.5rem;
+      font-family: var(--fonte-secundaria);
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border-color: var(--cor-destaque-primaria);
+      }
+    }
   }
 
   h2, h3 {
     color: var(--cor-texto);
     font-family: var(--fonte-primaria);
   }
-
-// package com.facade.comentario.config; // Ou onde quer que sua config de segurança esteja
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.Arrays;
-
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig { // O nome da sua classe pode ser diferente
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            // 1. Aplica a configuração de CORS definida no bean 'corsConfigurationSource'
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-            // 2. Desabilita o CSRF, comum para APIs RESTful que não usam cookies para sessão
-            .csrf(csrf -> csrf.disable())
-            // 3. Define as regras de autorização
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/**").permitAll() // Permite acesso à API publicamente
-                .anyRequest().authenticated() // Exige autenticação para qualquer outra requisição
-            );
-
-        return http.build();
-    }
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        // Permite requisições da sua aplicação Angular
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        // Define os métodos HTTP permitidos (incluindo OPTIONS para o preflight)
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        // Permite todos os cabeçalhos
-        configuration.setAllowedHeaders(Arrays.asList("*"));
-        // Permite o envio de credenciais (como cookies)
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        // Aplica esta configuração para todos os endpoints sob /api/
-        source.registerCorsConfiguration("/api/**", configuration);
-        return source;
-    }
-}
   .loading-state,
   .error-state {
     text-align: center;
