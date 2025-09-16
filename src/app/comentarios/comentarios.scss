@@ -12,19 +12,116 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   font-family: var(--fonte-secundaria);
 
+  .comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-ui-sutil);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+
+    .refresh-button {
+      background-color: var(--cor-destaque-primaria);
+      color: var(--cor-texto);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+
+      &:hover:not(:disabled) {
+        background-color: var(--cor-destaque-secundaria);
+      }
+
+      &:disabled {
+        background-color: var(--cor-ui-sutil);
+        cursor: not-allowed;
+      }
+    }
+  }
+
   h2, h3 {
     color: var(--cor-texto);
     font-family: var(--fonte-primaria);
-    border-bottom: 1px solid var(--cor-ui-sutil);
-    padding-bottom: 0.5rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
+  }
+
+// package com.facade.comentario.config; // Ou onde quer que sua config de segurança esteja
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig { // O nome da sua classe pode ser diferente
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            // 1. Aplica a configuração de CORS definida no bean 'corsConfigurationSource'
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            // 2. Desabilita o CSRF, comum para APIs RESTful que não usam cookies para sessão
+            .csrf(csrf -> csrf.disable())
+            // 3. Define as regras de autorização
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/**").permitAll() // Permite acesso à API publicamente
+                .anyRequest().authenticated() // Exige autenticação para qualquer outra requisição
+            );
+
+        return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        // Permite requisições da sua aplicação Angular
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        // Define os métodos HTTP permitidos (incluindo OPTIONS para o preflight)
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        // Permite todos os cabeçalhos
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        // Permite o envio de credenciais (como cookies)
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        // Aplica esta configuração para todos os endpoints sob /api/
+        source.registerCorsConfiguration("/api/**", configuration);
+        return source;
+    }
+}
+  .loading-state,
+  .error-state {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  .loading-state {
+    color: var(--cor-destaque-primaria);
+  }
+
+  .error-state {
+    background-color: rgba(225, 45, 57, 0.1);
+    border: 1px solid var(--cor-perigo);
+    color: var(--cor-perigo);
+    font-weight: 500;
   }
 
   .comment-list {
     margin-bottom: 2rem;
     max-height: 400px;
     overflow-y: auto;
+    scroll-behavior: smooth;
     padding-right: 10px;
 
     // Scrollbar customizada para o tema
@@ -130,10 +227,9 @@
       font-size: 1rem;
       font-family: var(--fonte-primaria);
       font-weight: 700;
-      float: right;
       transition: all 0.3s ease;
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: var(--cor-destaque-primaria);
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(76, 201, 240, 0.3);

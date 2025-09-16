@@ -1,66 +1,86 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-// Interface to define the comment structure
-interface Comment {
-  name: string;
-  text: string;
-  timestamp: Date;
-}
+import { HttpClientModule } from '@angular/common/http';
+import { ComentarioService, Comment, NewComment } from './comentario.service';
 
 @Component({
   selector: 'app-comentarios',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './comentarios.html',
   styleUrls: ['./comentarios.scss']
 })
 export class Comentarios implements OnInit {
+  @ViewChild('commentListContainer') private commentListContainer: ElementRef;
 
   comments: Comment[] = [];
   newCommentName: string = '';
   newCommentText: string = '';
+  isLoading = false;
+  isSubmitting = false;
+  error: string | null = null;
+  submissionError: string | null = null;
 
-  constructor() { }
+  constructor(private comentarioService: ComentarioService) { }
 
   ngOnInit(): void {
-    // Loads existing comments (example data).
     this.loadComments();
   }
 
   loadComments(): void {
-    // --- BACKEND INTEGRATION POINT (GET) ---
-    // In a real scenario, you would make an HTTP GET call to your Java API here.
-    // Ex: this.http.get<Comment[]>('/api/comments').subscribe(data => this.comments = data);
-    this.comments = [
-      { name: 'Example User', text: 'This is a test comment to demonstrate the scrollbar.', timestamp: new Date(Date.now() - 1000 * 60 * 10) },
-      { name: 'Anna', text: 'Great post! Very informative.', timestamp: new Date(Date.now() - 1000 * 60 * 9) },
-      { name: 'Charles', text: 'I really like the design of this section.', timestamp: new Date(Date.now() - 1000 * 60 * 8) },
-      { name: 'Mary', text: 'This is another comment.', timestamp: new Date(Date.now() - 1000 * 60 * 7) },
-      { name: 'John', text: 'Just testing the scroll functionality.', timestamp: new Date(Date.now() - 1000 * 60 * 6) },
-      { name: 'Sophia', text: 'This is the sixth example comment.', timestamp: new Date(Date.now() - 1000 * 60 * 5) },
-      { name: 'Peter', text: 'Awesome work!', timestamp: new Date(Date.now() - 1000 * 60 * 4) },
-      { name: 'Louise', text: 'The scrollbar should be visible now.', timestamp: new Date(Date.now() - 1000 * 60 * 2) }
-    ];
+    this.isLoading = true;
+    this.error = null;
+    console.log('Tentando carregar comentários via serviço...');
+    this.comentarioService.getComments().subscribe({
+      next: (data) => {
+        console.log('Comentários carregados com sucesso:', data);
+        this.comments = data.reverse(); // Exibe os mais recentes primeiro
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('Falha ao carregar os comentários. Erro:', err);
+        this.error = 'Could not load comments. Please try again later.';
+        this.isLoading = false;
+      }
+    });
   }
 
   submitComment(): void {
     if (this.newCommentName.trim() && this.newCommentText.trim()) {
-      const newComment: Comment = {
-        name: this.newCommentName,
-        text: this.newCommentText,
-        timestamp: new Date()
+      this.isSubmitting = true;
+      this.submissionError = null; // Reset error on new submission
+      const newComment: NewComment = {
+        author: this.newCommentName,
+        content: this.newCommentText
       };
 
-      // --- BACKEND INTEGRATION POINT (POST) ---
-      // In a real scenario, you would make an HTTP POST call to your Java API here.
-      // Ex: this.http.post('/api/comments', newComment).subscribe(() => { this.comments.push(newComment); });
-      this.comments.push(newComment);
-
-      // Clears the text fields after sending.
-      this.newCommentName = '';
-      this.newCommentText = '';
+      this.comentarioService.postComment(newComment).subscribe({
+        next: (savedComment) => {
+          this.comments.unshift(savedComment); // Adiciona o novo comentário no início da lista
+          // Clears the text fields after sending.
+          this.newCommentName = '';
+          this.newCommentText = '';
+          this.isSubmitting = false;
+          this.scrollToTop(); // Rola para o topo da lista
+        },
+        error: (err) => {
+          console.error('Failed to submit comment', err);
+          this.submissionError = 'Failed to submit comment. Please check the console for details and try again.';
+          this.isSubmitting = false;
+        }
+      });
     }
+  }
+
+  private scrollToTop(): void {
+    // Usa um timeout para garantir que a view foi atualizada antes de rolar
+    setTimeout(() => {
+      try {
+        this.commentListContainer.nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        console.error('Could not scroll to top', err);
+      }
+    }, 0);
   }
 }

@@ -1,27 +1,44 @@
 <section class="comentarios-container">
-  <h2>Comments</h2>
+  <div class="comments-header">
+    <h2>Comments</h2>
+    <button class="refresh-button" (click)="loadComments()" [disabled]="isLoading">
+      {{ isLoading ? 'Loading...' : 'Refresh' }}
+    </button>
+  </div>
+
+  <!-- Loading and Error states -->
+  <div *ngIf="isLoading" class="loading-state">Loading comments...</div>
+  <div *ngIf="error" class="error-state">{{ error }}</div>
 
   <!-- Lista de comentários existentes -->
-  <div class="comment-list">
+  <div *ngIf="!isLoading && !error" class="comment-list" #commentListContainer>
     <div *ngIf="comments.length === 0" class="no-comments">
       There are no comments yet. Be the first to comment!
     </div>
     <div *ngFor="let comment of comments" class="comment">
       <div class="comment-header">
-        <span class="comment-author">{{ comment.name }}</span>
+        <span class="comment-author">{{ comment.author }}</span>
         <span class="comment-timestamp">
           {{ comment.timestamp | date:'MM/dd/yyyy HH:mm' }}
         </span>
       </div>
-      <p class="comment-text">{{ comment.text }}</p>
+      <p class="comment-text">{{ comment.content }}</p>
     </div>
   </div>
 
   <!-- Formulário para novo comentário -->
   <div class="new-comment-form">
     <h3>Leave your name and comment</h3>
-    <input type="text" [(ngModel)]="newCommentName" placeholder="Your name" />
-    <textarea [(ngModel)]="newCommentText" placeholder="Write your comment here..." rows="4"></textarea>
-    <button (click)="submitComment()" [disabled]="!newCommentName.trim() || !newCommentText.trim()">Submit</button>
+    <input type="text" [(ngModel)]="newCommentName" placeholder="Your name" [disabled]="isSubmitting" />
+    <textarea [(ngModel)]="newCommentText" placeholder="Write your comment here..." rows="4" [disabled]="isSubmitting"></textarea>
+    <div class="form-footer">
+      <!-- Display submission error -->
+      <div *ngIf="submissionError" class="submission-error">
+        {{ submissionError }}
+      </div>
+      <button (click)="submitComment()" [disabled]="!newCommentName.trim() || !newCommentText.trim() || isSubmitting">
+        {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+      </button>
+    </div>
   </div>
 </section>

@@ -1,6 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+interface Project {
+  seal: string | null;
+  title: string;
+  scope: string;
+  duration: string;
+  team: string;
+  achievements: string;
+  highlights: string;
+  links: { text: string, url: string }[];
+  skills: string[];
+  likes: number;
+  liked: boolean;
+}
+
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -10,7 +24,8 @@ import { CommonModule } from '@angular/common';
 })
 export class About implements OnInit {
   currentProjectIndex = 0;
-  projects: any[] = [];
+  projects: Project[] = [];
+  constructor() {}
 
   ngOnInit(): void {
     this.projects = [
@@ -218,7 +233,7 @@ export class About implements OnInit {
     }
   }
 
-  likeProject(project: any): void {
+  likeProject(project: Project): void {
     if (!project.liked) {
       project.likes++;
       project.liked = true;
