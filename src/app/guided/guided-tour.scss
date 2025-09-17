@@ -16,6 +16,7 @@
   position: absolute;
   border-radius: 8px;
   box-shadow: 0 0 0 9999px rgba(13, 27, 42, 0.8);
+  border: 2px solid var(--cor-destaque-primaria);
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   pointer-events: none;
 }
@@ -32,12 +33,22 @@
   min-width: 300px;
   z-index: 10001;
   opacity: 0;
-  // Horizontally centers the tooltip and shifts it down
-  transform: translate(-50%, 10px);
   transition: all 0.3s ease-out;
 
-  &.is-above {
-    transform: translate(-50%, calc(-100% - 10px));
+  &.is-top {
+    transform: translate(-50%, calc(-100% - 20px));
+  }
+
+  &.is-bottom {
+    transform: translate(-50%, 0);
+  }
+
+  &.is-left {
+    transform: translate(calc(-100% - 20px), -50%);
+  }
+
+  &.is-right {
+    transform: translate(20px, -50%);
   }
 
   h4 {

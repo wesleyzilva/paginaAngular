@@ -1,0 +1,23 @@
+<div *ngIf="isActive" class="tour-overlay">
+  <div class="tour-highlight" [ngStyle]="highlightStyle"></div>
+
+  <div *ngIf="currentStep"
+       class="tour-tooltip"
+       [ngClass]="tooltipPositionClass"
+       [ngStyle]="tooltipStyle"
+       [@tooltip]>
+    <h4>{{ currentStep.title }}</h4>
+    <p [innerHTML]="currentStep.content"></p>
+
+    <div class="tour-navigation">
+      <span class="tour-counter">{{ currentStepIndex + 1 }} / {{ totalSteps }}</span>
+      <div>
+        <button class="tour-button tour-skip-button" (click)="skip()">Skip</button>
+        <button class="tour-button" (click)="prev()" [disabled]="currentStepIndex === 0">Previous</button>
+        <button class="tour-button" (click)="next()">
+          {{ currentStepIndex === totalSteps - 1 ? 'Finish' : 'Next' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
