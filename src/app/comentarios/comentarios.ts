@@ -57,10 +57,10 @@ export class Comentarios implements OnInit, OnDestroy {
           this.isLoading = false;
         }
       },
-      error: (err) => {
+      error: (err: Error) => {
         if (!isAutoRefresh) {
-          console.error('Falha ao carregar os comentários. Erro:', err);
-          this.error = 'Could not load comments. Please try again later.';
+          console.error('Falha ao carregar os comentários:', err.message);
+          this.error = err.message;
           this.isLoading = false;
         }
         // For auto-refresh, we can fail silently or show a subtle indicator
@@ -91,9 +91,9 @@ export class Comentarios implements OnInit, OnDestroy {
           // Reset the timer to avoid an immediate refresh just after posting
           this.onIntervalChange(this.autoRefreshInterval);
         },
-        error: (err) => {
-          console.error('Failed to submit comment', err);
-          this.submissionError = 'Failed to submit comment. Please check the console for details and try again.';
+        error: (err: Error) => {
+          console.error('Falha ao enviar comentário:', err.message);
+          this.submissionError = err.message;
           this.isSubmitting = false;
         }
       });
