@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;500&display=swap');
-
 
 :root {
   /* Vibrant & Techy Palette */
@@ -17,8 +15,8 @@
   --cor-perigo: #E12D39;                /* Red for CV */
   
   /* Sugestão de fontes: uma serifada para títulos e uma sans-serif limpa para o corpo */
-  --fonte-primaria: 'Poppins', sans-serif;
-  --fonte-secundaria: 'Inter', sans-serif;
+  --fonte-primaria: 'Segoe UI', 'Calibri', 'Helvetica', 'Arial', sans-serif;
+  --fonte-secundaria: 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
 html {

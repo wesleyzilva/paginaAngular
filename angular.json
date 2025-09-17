@@ -72,7 +72,9 @@
           "configurations": {
             "production": {
               "buildTarget": "paginaAngular:build:production"
-            },
+            }, "options": {
+            "poll": 1000
+          },
             "development": {
               "buildTarget": "paginaAngular:build:development"
             }
